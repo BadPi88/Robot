@@ -1,5 +1,7 @@
-package org.iesalandalus.programacion.robot.modelo;
+package org.iesalandalus.programacion.robot;
 
+import org.iesalandalus.programacion.robot.modelo.Coordenada;
+import org.iesalandalus.programacion.robot.modelo.Zona;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -14,5 +16,6 @@ class CoordenadaTest {
         assertEquals(x, coordenada.x());
         assertEquals(y, coordenada.y());
     }
+
 
 }
