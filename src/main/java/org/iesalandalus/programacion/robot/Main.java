@@ -8,14 +8,13 @@ import javax.naming.OperationNotSupportedException;
 public class Main {
 
     private static ControladorRobot controladorRobot;
-
     public static void main(String[] args) {
         int opcion;
 
         do {
             opcion = Consola.elegirOpcion();
             ejecutarOpcion(opcion);
-        } while (opcion != 6); // 6 para salir
+        } while (opcion != 6);
 
         Consola.despedirse();
     }
@@ -46,20 +45,20 @@ public class Main {
     }
 
     private static void controlarRobotDefecto() {
-        Robot robot = new Robot(); // Constructor por defecto
+        Robot robot = new Robot();
         controladorRobot = new ControladorRobot(robot);
     }
 
     private static void controlarRobotZona() {
         Zona zona = Consola.elegirZona();
-        Robot robot = new Robot(zona); // Constructor con zona
+        Robot robot = new Robot(zona);
         controladorRobot = new ControladorRobot(robot);
     }
 
     private static void controlarRobotZonaOrientacion() {
         Zona zona = Consola.elegirZona();
         Orientacion orientacion = Consola.elegirOrientacion();
-        Robot robot = new Robot(zona, orientacion); // Constructor con zona y orientación
+        Robot robot = new Robot(zona, orientacion);
         controladorRobot = new ControladorRobot(robot);
     }
 
@@ -67,7 +66,7 @@ public class Main {
         Zona zona = Consola.elegirZona();
         Orientacion orientacion = Consola.elegirOrientacion();
         Coordenada coordenada = Consola.elegirCoordenada();
-        Robot robot = new Robot(zona, orientacion, coordenada); // Constructor con zona, orientación y coordenada
+        Robot robot = new Robot(zona, orientacion, coordenada);
         controladorRobot = new ControladorRobot(robot);
     }
 
