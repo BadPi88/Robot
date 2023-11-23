@@ -1,5 +1,9 @@
 package org.iesalandalus.programacion.robot;
 
+import org.iesalandalus.programacion.robot.modelo.Coordenada;
+import org.iesalandalus.programacion.robot.modelo.Orientacion;
+import org.iesalandalus.programacion.robot.modelo.Robot;
+import org.iesalandalus.programacion.robot.modelo.Zona;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,7 +16,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 class RobotTest {
-/*
     private Zona zonaDefecto;
     private Coordenada centroDefecto;
 
@@ -180,5 +183,5 @@ class RobotTest {
         robot.girarALaIzquierda();
         assertEquals(orientacionEsperada, robot.getOrientacion());
     }
-*/
+
 }

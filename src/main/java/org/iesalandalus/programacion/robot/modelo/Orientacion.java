@@ -12,4 +12,5 @@ public enum Orientacion {
     public String toString() {
         return nombre;
     }
+
 }

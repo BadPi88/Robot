@@ -26,7 +26,7 @@ public record Zona(int ancho, int alto) {
     }
 
     public Zona() {
-        this(ANCHO_MINIMO,ALTO_MINIMO);
+        this(ANCHO_MINIMO, ALTO_MINIMO);
 
     }
 
@@ -42,9 +42,11 @@ public record Zona(int ancho, int alto) {
 
         }
     }
-    public Coordenada getCentro(){
-        return  new Coordenada(ancho/2,alto/2);
+
+    public Coordenada getCentro() {
+        return new Coordenada(ancho / 2, alto / 2);
     }
+
     public boolean pertenece(Coordenada coordenada) {
         Objects.requireNonNull(coordenada, "La coordenada no puede ser nula.");
         return perteneceX(coordenada.x()) && perteneceY(coordenada.y());
@@ -53,6 +55,7 @@ public record Zona(int ancho, int alto) {
     private boolean perteneceX(int x) {
         return (x >= 0 && x < ancho);
     }
+
     private boolean perteneceY(int y) {
         return (y >= 0 && y < alto);
     }
