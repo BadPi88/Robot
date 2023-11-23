@@ -8,25 +8,25 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
     private Consola() {
-        // Constructor privado para evitar la instanciación de la clase
     }
 
     public static int elegirOpcion() {
         mostrarMenuPrincipal();
-        System.out.println("Elige una opción: ");
+        System.out.println("Elige una opción:");
         return Entrada.entero();
     }
 
     public static Zona elegirZona() {
         Zona zona = null;
         do {
-            System.out.println("Introduce el ancho de la zona: ");
+            System.out.println("Introduce el ancho de la zona:");
             int ancho = Entrada.entero();
             System.out.println("Introduce el alto de la zona: ");
             int alto = Entrada.entero();
 
             try {
                 zona = new Zona(ancho, alto);
+                System.out.println("La nueva zona es: " + zona);
             } catch (IllegalArgumentException e) {
                 System.out.println("Error al crear la zona. Inténtalo de nuevo.");
             }
@@ -58,25 +58,25 @@ public class Consola {
 
     public static char elegirComando() {
         System.out.println("Elige el comando a ejecutar (A, I, D): ");
-        char comando = Entrada.caracter();
+        char comando = Character.toUpperCase(Entrada.caracter());
         while (comando != 'A' && comando != 'I' && comando != 'D') {
             System.out.println("Comando no válido. Inténtalo de nuevo.");
             System.out.println("Elige el comando a ejecutar (A, I, D): ");
-            comando = Entrada.caracter();
+            comando = Character.toUpperCase(Entrada.caracter());
         }
         return comando;
     }
 
     public static void mostrarRobot(Robot robot) {
-        if (robot != null) {
-            System.out.println(robot);
+        if (robot == null) {
+            throw new NullPointerException("El robot no puede ser nulo");
         } else {
-            System.out.println("El robot es nulo.");
+            System.out.println(robot);
         }
     }
 
     public static void despedirse() {
-        System.out.println("¡Hasta luego!");
+        System.out.println("¡Hasta luego Lucas!");
     }
 
     private static void mostrarMenuPrincipal() {
@@ -85,7 +85,8 @@ public class Consola {
         System.out.println("3. Indicar zona y orientación de un robot");
         System.out.println("4. Indicar zona, orientación y coordenada inicial de un robot");
         System.out.println("5. Ejecutar comando");
-        System.out.println("6. Salir");
+        System.out.println("6. Mostrar robot");
+        System.out.println("7. Salir");
     }
 
     private static void mostrarMenuOrientacion() {

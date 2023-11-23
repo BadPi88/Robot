@@ -42,7 +42,6 @@ public class Robot {
         setZona(robot.getZona());
         setOrientacion(robot.getOrientacion());
         setCoordenada(robot.getCoordenada());
-
     }
 
     public Coordenada getCoordenada() {

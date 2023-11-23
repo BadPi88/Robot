@@ -11,6 +11,7 @@ public class ControladorRobot {
     public ControladorRobot(Robot robot) {
         Objects.requireNonNull(robot,"El robot no puede ser nulo.");
         this.robot = new Robot();
+
     }
 
     public Robot getRobot() {

@@ -5,6 +5,8 @@ import org.iesalandalus.programacion.robot.vista.Consola;
 
 import javax.naming.OperationNotSupportedException;
 
+import static org.iesalandalus.programacion.robot.vista.Consola.mostrarRobot;
+
 public class Main {
 
     private static ControladorRobot controladorRobot;
@@ -14,12 +16,17 @@ public class Main {
         do {
             opcion = Consola.elegirOpcion();
             ejecutarOpcion(opcion);
-        } while (opcion != 6);
+        } while (opcion != 7);
 
         Consola.despedirse();
     }
 
     private static void ejecutarOpcion(int opcion) {
+        if ( opcion > 7 || opcion < 0 ){
+            System.out.println("Opcion no valida. Elija otra");
+            opcion = Consola.elegirOpcion();
+            ejecutarOpcion(opcion);
+        }
         switch (opcion) {
             case 1:
                 controlarRobotDefecto();
@@ -37,13 +44,12 @@ public class Main {
                 ejecutarComando();
                 break;
             case 6:
-                // Salir
+                mostrarRobot(controladorRobot.getRobot());
                 break;
-            default:
-                System.out.println("Opción no válida. Inténtalo de nuevo.");
+            case 7:
+                break;
         }
     }
-
     private static void controlarRobotDefecto() {
         Robot robot = new Robot();
         controladorRobot = new ControladorRobot(robot);
@@ -80,10 +86,11 @@ public class Main {
 
         try {
             controladorRobot.ejecutar(comando);
-            Consola.mostrarRobot(controladorRobot.getRobot());
+            mostrarRobot(controladorRobot.getRobot());
         } catch (OperationNotSupportedException e) {
             System.out.println("Error: " + e.getMessage());
         }
+
     }
 }
 
