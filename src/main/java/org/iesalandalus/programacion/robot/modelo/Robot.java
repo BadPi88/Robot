@@ -45,6 +45,7 @@ public class Robot {
     }
 
     public Coordenada getCoordenada() {
+
         return coordenada;
     }
 
@@ -54,7 +55,7 @@ public class Robot {
         } else if (!zona.pertenece(coordenada)) {
             throw new IllegalArgumentException("La coordenada no pertenece a la zona.");
         }
-        this.coordenada = coordenada;
+        this.coordenada = new Coordenada(coordenada.x(),coordenada.y());
     }
 
     public Zona getZona() {

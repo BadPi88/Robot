@@ -74,6 +74,7 @@ public class Main {
         Coordenada coordenada = Consola.elegirCoordenada();
         Robot robot = new Robot(zona, orientacion, coordenada);
         controladorRobot = new ControladorRobot(robot);
+        mostrarRobot(robot);
     }
 
     private static void ejecutarComando() {
