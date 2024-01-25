@@ -99,5 +99,6 @@ public class Consola {
         System.out.println("7. Oeste");
         System.out.println("8. Noroeste");
     }
+    public static void Obsta(){}
 }
 

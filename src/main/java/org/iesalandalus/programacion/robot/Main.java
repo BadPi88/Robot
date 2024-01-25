@@ -5,6 +5,7 @@ import org.iesalandalus.programacion.robot.vista.Consola;
 
 import javax.naming.OperationNotSupportedException;
 
+import static org.iesalandalus.programacion.robot.vista.Consola.despedirse;
 import static org.iesalandalus.programacion.robot.vista.Consola.mostrarRobot;
 
 public class Main {
@@ -47,6 +48,7 @@ public class Main {
                 mostrarRobot(controladorRobot.getRobot());
                 break;
             case 7:
+                despedirse();
                 break;
         }
     }
@@ -82,7 +84,6 @@ public class Main {
             System.out.println("No hay un robot para ejecutar comandos. Elige una opción para crear o seleccionar un robot.");
             return;
         }
-
         char comando = Consola.elegirComando();
 
         try {
